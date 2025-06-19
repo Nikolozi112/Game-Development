@@ -1,0 +1,9 @@
+local Part = game.Workspace["Level 04"].Homework["07"].Part
+
+local Math1 = math.random()
+local Math2 = math.random()
+
+if Math1 > Math2 then
+	Part.Size = Vector3.new(10, 10,10) else
+	Part.Size = Vector3.new(1, 1, 1)
+end

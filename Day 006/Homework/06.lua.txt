@@ -1,0 +1,10 @@
+local positions = {
+	Vector3.new(-557, 10, -960),
+	Vector3.new(-552, 12, -955),
+	Vector3.new(-560, 14, -950)
+}
+
+local part = script.Parent 
+
+local randomIndex = math.random(1, #positions) 
+part.Position = positions[randomIndex] 

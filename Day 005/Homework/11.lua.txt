@@ -1,0 +1,17 @@
+local Part = script.Parent
+
+local x = math.random(0, 10)
+local y = math.random(0, 10)
+local z = math.random(0, 10)
+
+Part.Size = Vector3.new(x, y, z)
+local size = x + y + z
+
+print(x, y, z)
+print(size)
+
+if size > 15 then
+	print("Object is big!")
+else
+	print("Object is small!")
+end

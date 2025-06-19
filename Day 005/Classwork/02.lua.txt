@@ -1,0 +1,57 @@
+local X = math.random(0, 30)
+local Y = math.random(0, 30)
+local Z = math.random(0, 30)
+
+
+print("X is:", X)
+if X == 20 then
+	print("X is equal to 20!")
+elseif X > 20 then
+	print("X is greater then 20!")
+elseif X == 15 then
+	print("X is equal to 15!")
+elseif X > 15 then
+	print("X is greter then 15!")
+elseif X == 10 then
+	print("X is equal to 10!")
+elseif X > 10 then
+	print("X is greater then 10!")
+else 
+	print("X is less then 10!")
+end
+
+
+print("Y is:", Y)
+if Y == 20 then
+	print("Y is equal to 20!")
+elseif Y > 20 then
+	print("Y is greater then 20!")
+elseif Y == 15 then
+	print("Y is equal to 15!")
+elseif Y > 15 then
+	print("Y is greter then 15!")
+elseif Y == 10 then
+	print("Y is equal to 10!")
+elseif Y > 10 then
+	print("Y is greater then 10!")
+else 
+	print("Y is less then 10!")
+end
+
+
+print("Z is:", Z)
+if Z == 20 then
+	print("Z is equal to 20!")
+elseif Z > 20 then
+	print("Z is greater then 20!")
+elseif Z == 15 then
+	print("Z is equal to 15!")
+elseif Z > 15 then
+	print("Z is greter then 15!")
+elseif Z == 10 then
+	print("Z is equal to 10!")
+elseif Z > 10 then
+	print("Z is greater then 10!")
+else 
+	print("Z is less then 10!")
+end

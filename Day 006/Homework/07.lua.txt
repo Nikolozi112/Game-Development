@@ -1,0 +1,13 @@
+local part = script.Parent 
+local step = 1  
+local maxDistance = 10  
+local direction = 10
+
+while true do
+	part.Position = part.Position + Vector3.new(step * direction, 0, 0)
+	wait(0.5)  
+
+	if math.abs(part.Position.X) >= maxDistance then
+		direction = direction * -1
+	end
+end

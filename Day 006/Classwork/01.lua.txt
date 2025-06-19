@@ -1,0 +1,8 @@
+local Part = script.Parent
+
+Part.CanCollide = false
+
+while true do
+	Part.Color = Color3.new(math.random(0, 255), math.random(0, 255), math.random(0, 255))
+	wait(1)
+end

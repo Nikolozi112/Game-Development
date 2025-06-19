@@ -1,0 +1,14 @@
+local Part = script.Parent
+
+local X = 0
+local Y = 0
+local Z = 0
+
+while true do 
+	Part.Size = Vector3.new(X, Y, Z)
+	
+	X = X + 1
+	Y = Y + 1
+	Z = Z + 1
+	wait(1)
+end

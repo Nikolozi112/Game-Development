@@ -1,0 +1,5 @@
+local Part = script.Parent
+
+while wait(1) do
+	Part.Position = Vector3.new(math.random(-561, -551), math.random(15, 25), math.random(-986, -976))
+end

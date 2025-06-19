@@ -1,0 +1,17 @@
+local part = script.Parent 
+
+
+local colors = {
+	Color3.new(1, 0, 0), 
+	Color3.new(0, 1, 0), 
+	Color3.new(0, 0, 1),  
+	Color3.new(1, 1, 0), 
+	Color3.new(1, 0, 1), 
+	Color3.new(0, 1, 1)   
+}
+
+while true do
+	local randomColor = colors[math.random(1, #colors)] 
+	part.Color = randomColor 
+	wait(0.5)  
+end

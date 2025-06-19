@@ -1,0 +1,7 @@
+local X1, Y1, Z1 = math.random(0, 100), math.random(0, 100), math.random(0, 100)
+local X2, Y2, Z2 = math.random(0, 100), math.random(0, 100), math.random(0, 100)
+
+local Point1 = Vector3.new(X1, Y1, Z1)
+local Point2 = Vector3.new(X2, Y2, Z2)
+
+print((Point1 - Point2).Magnitude)

@@ -1,0 +1,12 @@
+local part = script.Parent 
+local startPosition = part.Position  
+
+while true do
+	local randomHeight = math.random(1, 50) 
+	part.Position = Vector3.new(part.Position.X, randomHeight, part.Position.Z)
+	wait(0.5)  
+
+	if part.Position.Y > 25 then
+		part.Position = startPosition
+	end
+end

@@ -1,0 +1,15 @@
+local part = script.Parent
+
+while true do
+	local randomHeight = math.random(9, 18)
+	part.Position = Vector3.new(part.Position.X, randomHeight, part.Position.Z)
+
+	
+	if part.Position.Y > 13 then
+		part.Transparency = 1 
+	else
+		part.Transparency = 0 
+	end
+
+	wait(0.5)  
+end

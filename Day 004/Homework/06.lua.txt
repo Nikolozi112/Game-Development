@@ -1,0 +1,7 @@
+local Part = game.Workspace["Level 04"].Homework["06"].Part
+local MathOfPart = math.random(0, 256)
+
+if MathOfPart > 128  then
+	Part.Color = Color3.fromRGB(255) else
+	Part.Color = Color3.fromRGB(0, 0, 255)	
+end

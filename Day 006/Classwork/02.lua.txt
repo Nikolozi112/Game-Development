@@ -1,0 +1,39 @@
+local Part = script.Parent
+local red = 0
+local blue = 0
+local redIncreasing = false
+local blueIncreasing = true
+
+while true do 
+	if redIncreasing then
+		red += 5
+		if red >= 255 then
+			red = 255
+			redIncreasing = true
+			blueIncreasing = false
+		end
+	else
+		red -= 5
+		if red <= 0 then
+			red = 0
+			redIncreasing = false
+		end
+	end
+
+	if blueIncreasing then
+		blue += 5
+		if blue >= 255 then
+			blue = 255
+			blueIncreasing = true
+		end
+	else
+		blue -= 5
+		if blue <= 0 then
+			blue = 0
+			blueIncreasing = false
+		end
+	end
+
+	Part.Color = Color3.fromRGB(red, 0, blue)
+	wait(0.01)
+end

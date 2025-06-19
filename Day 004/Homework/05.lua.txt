@@ -1,0 +1,11 @@
+local Part = game.Workspace["Level 04"].Homework["05"].Part
+Part.CanCollide = true
+local CanCollideOfPart = Part.CanCollide
+
+if  CanCollideOfPart == true then
+	Part.CanCollide = false
+end
+
+if 	CanCollideOfPart == false then
+	Part.CanCollide = true
+end

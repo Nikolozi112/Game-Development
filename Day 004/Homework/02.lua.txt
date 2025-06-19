@@ -1,0 +1,9 @@
+local Part = game.Workspace["Level 04"].Homework["02"].Part
+
+Part.Anchored = true    -- დამაგრება.
+Part.CastShadow = false    -- ჩრდილი.
+Part.CanCollide = false      -- შეხება.
+Part.Color = Color3.fromRGB(255, 255, 255)    -- ფერი.
+Part.Material = Enum.Material.Ice    -- მასალა.
+Part.Transparency = 0.5    -- გამჭვირვალობა.
+Part.Reflectance = 1    -- არეკვლადობა.

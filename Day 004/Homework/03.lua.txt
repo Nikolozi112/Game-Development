@@ -1,0 +1,5 @@
+local Part = game.Workspace["Level 04"].Homework["03"].Part
+
+local Red, Green, Blue = math.random(0, 255), math.random(0, 255), math.random(0, 255)
+
+Part.Color = Color3.fromRGB(Red, Green, Blue)

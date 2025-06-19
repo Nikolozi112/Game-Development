@@ -1,0 +1,8 @@
+local X = math.random(-5, 5)
+local Y = math.random(-5, 5)
+
+if X >= 0 and Y >= 0 then
+	print("Its outside!")
+else 
+	print("Its inside!")
+end

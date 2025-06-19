@@ -1,0 +1,7 @@
+local num = 0
+
+while num < 20 do
+	wait(5)
+	num += 1
+	print(num)
+end

@@ -1,0 +1,13 @@
+local R = math.random(-3, 3)
+local G = math.random(-3, 3)
+local B = math.random(-3, 3)
+
+local Color = R + G + B
+
+print(Color)
+
+if Color > 1.5 then
+	print("This is a light color.")
+else
+	print("This is a dark color.")
+end

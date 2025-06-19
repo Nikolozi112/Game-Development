@@ -1,0 +1,7 @@
+local X = math.random(-10, 10)
+local Y = 0
+local Z = math.random(-10, 10)
+
+local Cordinat = Vector3.new(X, Y, Z)
+
+print(Cordinat)

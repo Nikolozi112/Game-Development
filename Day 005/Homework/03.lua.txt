@@ -1,0 +1,17 @@
+local X1 = math.random(0, 100)
+local Y1 = math.random(0, 100)
+local Z1 = math.random(0, 100)
+
+local Cordinats1 = Vector3.new(X1, Y1, Z1)
+
+local X2 = math.random(0, 100)
+local Y2 = math.random(0, 100)
+local Z2 = math.random(0, 100)
+
+local Cordinats2 = Vector3.new(X2, Y2, Z2)
+
+if X1 > X2 then
+	print("X1 is greater then X2!")
+else
+	print("X2 is greater then X1!")
+end

@@ -1,0 +1,11 @@
+local MyPart = game.Workspace["Level 04"].Classwork["02"].Part
+
+local Red, Green, Blue = math.random(0, 255), math.random(0, 255), math.random(0, 255) 
+
+print("Red variable content ".. Red)
+print("Green variable content ".. Green)
+print("Blue variable content ".. Blue)
+
+MyPart.Color = Color3.fromRGB(Red, Green, Blue)
+MyPart.Color = Color3.fromRGB(Blue, Red, Green)
+MyPart.Color = Color3.fromRGB(Green, Blue, Red)

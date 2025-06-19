@@ -1,0 +1,15 @@
+local MyPart = game.Workspace["Level 04"].Classwork["01"].GOABlock
+
+MyPart.Color = Color3.fromRGB(149, 0, 0)
+
+MyPart.Anchored = true
+
+MyPart.CastShadow = false
+
+MyPart.Reflectance = 1
+
+MyPart.Transparency = 0.5
+
+MyPart.Material = Enum.Material.Brick
+
+MyPart.Name = "Block"

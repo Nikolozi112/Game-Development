@@ -1,0 +1,9 @@
+local x = math.random(-10, 10)
+
+print(x)
+
+if x > 0 then 
+	print("Moving right!")
+else
+	print("Moving left!")
+end

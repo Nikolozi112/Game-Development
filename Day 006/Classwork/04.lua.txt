@@ -1,0 +1,8 @@
+local Part = script.Parent
+
+while wait(1) do
+	Part.Position = Vector3.new(math.random(-605, -595), math.random(15, 25), math.random(-981, -971))
+	Part.Size = Vector3.new(math.random(1, 10), math.random(1, 10), math.random(1, 10))
+	Part.Color = Color3.fromRGB(math.random(0, 255), math.random(0, 255), math.random(0, 255))
+	Part.Transparency = math.random(0, 1)
+end

@@ -1,0 +1,21 @@
+local FirstNum = 7
+local SecondNum = math.random(0, 10)
+
+print("FirstNum is:", FirstNum)
+print("SecondNum is:", SecondNum)
+
+if FirstNum == SecondNum then
+	print("They are equal!")
+end
+
+if FirstNum > SecondNum then
+	print("FirstNum is larger than SecondNum!")
+end
+
+if FirstNum < SecondNum then
+	print("SecondNum is larger than FirstNum!")
+end
+
+if FirstNum ~= SecondNum then
+	print("They are not equal!")
+end

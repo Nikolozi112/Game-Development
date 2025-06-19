@@ -1,0 +1,10 @@
+local Part = game.Workspace["Level 05"].Homework["04"].Part
+local xCordinant = math.random(-10, 11)
+
+if xCordinant == 0 then
+	Part.Color = Color3.fromRGB(0, 255, 0)
+elseif xCordinant > 0 then
+	Part.Color = Color3.fromRGB(255, 0, 0)
+else
+	Part.Color = Color3.fromRGB(0, 0, 255)
+end

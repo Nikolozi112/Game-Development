@@ -1,0 +1,7 @@
+local Part = game.Workspace["Level 05"].Classwork["01"].Part
+
+Part.Position = Vector3.new(-690, 30, -977)
+
+Part.Size = Vector3.new(10, 1, 20)
+
+Part.Rotation = Vector3.new(90, 0, 90)

@@ -1,0 +1,7 @@
+repeat
+	local x = math.random(-515, -495)
+	local part = Instance.new("Part", script.Parent)
+	part.Position = Vector3.new(x, 9, -990)
+	part.Anchored = true
+	wait(0.1)
+until x == -505

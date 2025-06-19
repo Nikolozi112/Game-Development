@@ -1,0 +1,6 @@
+local myTable = {42,"Hello, World!",true,false,nil,"Roblox",124,false,593,"Nikoloz",nil,"hello",111,true,"false"}
+while true do
+	local RandomTable = myTable[math.random(1, #myTable)]
+    wait(1)
+	print(RandomTable)
+end

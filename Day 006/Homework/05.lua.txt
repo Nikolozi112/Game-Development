@@ -1,0 +1,13 @@
+local Part = script.Parent
+
+local X = math.random(0, 20)
+local Y = math.random(0, 20)
+local Z = math.random(0, 20)
+Part.Size = Vector3.new(X, Y, Z)
+
+if Part.Size.X > 10 or Part.Size.Y > 10 or Part.Size.Z > 10 then
+	Part.Size = Vector3.new(math.random(0,10), math.random(0,10), math.random(0,10))
+	task.wait(1)
+end
+
+print(Part.Size)
