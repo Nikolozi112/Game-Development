@@ -1,0 +1,14 @@
+local y = 0
+local step = 2.5
+
+repeat
+	local part = Instance.new("Part")
+	
+	part.Size = Vector3.new(2, 2, 2)
+	part.Anchored = true
+	part.Position = Vector3.new(-460, 9.3 + y, -960)
+	part.Color = Color3.fromRGB(255, 255, 0)
+	part.Parent = script.Parent
+
+	y += step
+until y >= 30

@@ -1,0 +1,13 @@
+local startPosition = Vector3.new(-475, 9, -990) 
+local nextstep = Vector3.new(0, 0, 2.5)
+
+for i = 1, 10 do
+	local block = Instance.new("Part")
+	block.Rotation = Vector3.new(0, 90, 0)
+	block.Size = Vector3.new(2, 2, 2)
+	block.Anchored = true
+	block.Position = startPosition + nextstep * (i - 1)
+	block.Color = Color3.fromRGB(200, 200, 255)
+	block.Name = "Block" .. i
+	block.Parent = script.Parent
+end

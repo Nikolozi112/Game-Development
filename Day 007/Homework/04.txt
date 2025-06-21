@@ -1,0 +1,13 @@
+local startPosition = Vector3.new(-465, 9.3, -973)
+local stepUp = Vector3.new(0, 2, -2) 
+
+for i = 1, 10 do
+	local stair = Instance.new("Part")
+	stair.Rotation = Vector3.new(0, -90, 0)
+	stair.Size = Vector3.new(2, 2, 8)
+	stair.Anchored = true
+	stair.Position = startPosition + stepUp * (i - 1)
+	stair.Color = Color3.fromRGB(200, 200, 200)
+	stair.Name = "Step" .. i
+	stair.Parent = script.Parent
+end

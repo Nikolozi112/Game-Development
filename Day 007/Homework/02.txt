@@ -1,0 +1,11 @@
+local part = script.Parent
+local isOn = true
+
+local colors = {Color3.new(1, 1, 0), Color3.new(1, 1, 1)} 
+local index = 1
+
+while isOn do
+	part.BrickColor = BrickColor.new(colors[index])
+	index = index % #colors + 1
+	wait(0.5)
+end
