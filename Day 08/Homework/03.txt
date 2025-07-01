@@ -1,0 +1,7 @@
+local numbers = {1, 2, 3, 4, 5}
+
+table.insert(numbers, 6)
+
+for i = 1, #numbers do
+	print(numbers[i])
+end

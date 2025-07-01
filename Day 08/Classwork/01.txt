@@ -1,0 +1,11 @@
+local vegetables = {"carrot", "tomato", "cucumber", "cabbage", "onion"}
+
+table.remove(vegetables, 3)
+table.insert(vegetables, "Corn")
+
+print(vegetables)
+print(table.find(vegetables, "tomato"))
+
+for i = 1, #vegetables do 
+	print(i .. ": " .. vegetables[i])
+end

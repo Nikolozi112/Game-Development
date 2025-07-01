@@ -1,0 +1,11 @@
+local colors = {
+	Color3.fromRGB(255, 0, 0), 
+	Color3.fromRGB(0, 255, 0), 
+	Color3.fromRGB(0, 0, 255), 
+	Color3.fromRGB(255, 255, 255),
+	Color3.fromRGB(0, 0, 0)
+}
+
+for i = 1, #colors do
+	print(colors[i])
+end

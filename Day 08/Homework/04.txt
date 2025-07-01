@@ -1,0 +1,4 @@
+local fruits = {"Apple", "Banana", "Grape", "Orange"}
+
+table.remove(fruits, 3)
+print(fruits)

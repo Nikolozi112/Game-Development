@@ -1,0 +1,9 @@
+local vegetables = {"carrot", "tomato", "cucumber", "cabbage", "onion"}
+
+for index, vegetable in pairs(vegetables) do
+	print(index, vegetable)
+end
+
+for index, vegetable in ipairs(vegetables) do
+	print(index, vegetable)
+end

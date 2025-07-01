@@ -1,0 +1,15 @@
+local Player = {
+	["Weapon ="] = "Sword", 
+	["Armor ="] = "Diamond", 
+	["Coins ="] = 348, 
+	["Magic ="] = "Fire", 
+	["Level ="] = 35
+}
+
+for tools, inventory in pairs(Player) do
+	print(tools, inventory)
+end
+
+for tools, inventory in ipairs(Player) do
+	print(tools, inventory)
+end

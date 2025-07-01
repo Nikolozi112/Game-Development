@@ -1,0 +1,9 @@
+local Scores = {
+	["Alex"] = 5,
+	["Bella"] = 8,
+	["Chris"] = 5
+}
+
+for names, score in pairs(Scores) do
+	print(names, score)
+end

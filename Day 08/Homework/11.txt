@@ -1,0 +1,11 @@
+local myNumbers = {1, 4, 7, 10, 13, 16}
+
+for i = #myNumbers, 1, -1 do
+	if myNumbers[i] % 2 == 0 then 
+		table.remove(myNumbers, i)
+	end
+end
+
+for i = 1, #myNumbers do
+	print("დარჩენილი:", myNumbers[i])
+end

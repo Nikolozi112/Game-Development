@@ -1,0 +1,11 @@
+local Positions = {
+	Vector3.new(math.random(0, 100), math.random(0, 100), math.random(0, 100)), 
+	Vector3.new(math.random(0, 100), math.random(0, 100), math.random(0, 100)), 
+	Vector3.new(math.random(0, 100), math.random(0, 100), math.random(0, 100)),
+	Vector3.new(math.random(0, 100), math.random(0, 100), math.random(0, 100)), 
+	Vector3.new(math.random(0, 100), math.random(0, 100), math.random(0, 100))
+}
+
+for i = 1, #Positions do
+	print(Positions[i])
+end

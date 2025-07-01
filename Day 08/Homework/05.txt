@@ -1,0 +1,7 @@
+local numbers = {1, 2, 3, 4, 5, 6, 8, 9, 10}
+
+if not table.find(numbers, 7) then
+	print(7 .. " has not been found!")
+else
+	print(7 .. " has been found!")
+end

@@ -1,0 +1,19 @@
+for i = 1, 10 do
+	
+	local block = Instance.new("Part")
+	block.Parent = script.Parent
+	block.Size = Vector3.new(2, 1, 2)
+	local position = Vector3.new(-365, 8.73, -960)
+	local step = Vector3.new(0, 0, -3)
+	block.Position = position + step * (i - 1)
+	block.Name = "Block_" .. i
+
+	local r = math.random(0, 255)
+	local g = math.random(0, 255)
+	local b = math.random(0, 255)
+	block.Color = Color3.fromRGB(r, g, b)
+
+	if r <= 100 and g >= 200 and b <= 100 then
+		print(block.Name, "is green!")
+	end
+end  
