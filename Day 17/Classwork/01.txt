@@ -1,0 +1,12 @@
+local UserInputService = game:GetService("UserInputService")
+
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    print("input") 
+
+    if input.UserInputType == Enum.UserInputType.Keyboard then
+
+        if input.KeyCode == Enum.KeyCode.E then
+            print("You pressed E keybutton")
+        end
+    end
+end)

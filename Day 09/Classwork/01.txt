@@ -1,0 +1,15 @@
+local Playerhealth = 100
+print("Player's health is 100")
+wait(1)
+while Playerhealth >= 20 do
+	function damagePlayer()
+		Playerhealth -= 20
+		print("Player's health is " .. Playerhealth)
+
+		if Playerhealth == 0 then
+			print("Player is dead!")
+		end
+	end
+	damagePlayer()
+	wait(1)
+end

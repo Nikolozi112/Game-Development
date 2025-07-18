@@ -1,0 +1,13 @@
+local coin = Instance.new("Part")
+coin.Size = Vector3.new(2, 2, 2)
+coin.Position = Vector3.new(0, 3, 0)
+coin.Anchored = true
+coin.Shape = Enum.PartType.Ball
+coin.BrickColor = BrickColor.new("New Yeller")
+coin.Name = "Coin"
+coin.Parent = workspace
+
+local scriptObj = Instance.new("Script")
+scriptObj.Parent = coin
+
+scriptObj

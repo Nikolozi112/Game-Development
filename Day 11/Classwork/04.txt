@@ -1,0 +1,24 @@
+local door = Instance.new("Part")
+door.Size = Vector3.new(4, 8, 1)
+door.Position = Vector3.new(0, 4, 10)
+door.Anchored = true
+door.BrickColor = BrickColor.new("Dark stone grey")
+door.Name = "Door"
+door.Parent = workspace
+
+local clickDetector = Instance.new("ClickDetector")
+clickDetector.Parent = door
+
+local scriptObj = Instance.new("Script")
+scriptObj.Parent = door
+
+scriptObj.Source = [[
+local door = script.Parent
+local clickDetector = door:FindFirstChild("ClickDetector")
+
+clickDetector.MouseClick:Connect(function(player)
+    print(player.Name .. " opened the door!")
+
+    door.Position = door.Position + Vector3.new(0, 10, 0)
+end)
+]]

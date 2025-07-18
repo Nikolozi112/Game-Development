@@ -1,0 +1,15 @@
+local part = Instance.new("Part")
+part.Size = Vector3.new(4, 1, 4)
+part.Position = Vector3.new(0, 5, 0)
+part.Anchored = true
+part.Name = "TouchDetector"
+part.Parent = workspace
+local scriptObj = Instance.new("Script")
+scriptObj.Parent = part
+scriptObj.Source = [[
+local part = script.Parent
+
+part.Touched:Connect(function(hit)
+    print("Object that touched the part: " .. tostring(hit))
+end)
+]]

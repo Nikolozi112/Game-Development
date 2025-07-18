@@ -1,0 +1,7 @@
+function addNumbers(Num1, Num2)
+	return Num1 + Num2
+end
+
+print(addNumbers(1, 4))
+print(addNumbers(2, 5))
+print(addNumbers(3, 6))

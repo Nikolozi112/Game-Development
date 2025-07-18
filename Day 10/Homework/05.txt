@@ -1,0 +1,17 @@
+local function onTouch(hit)
+    local character = hit.Parent
+    local humanoid = character:FindFirstChild("Humanoid")
+    
+    if humanoid then
+
+        local player = game.Players:GetPlayerFromCharacter(character)
+        if player then
+            print("მოთამაშის სახელი: " .. player.Name)
+        end
+    end
+end
+
+
+local part = workspace.TouchPart
+
+part.Touched:Connect(onTouch)

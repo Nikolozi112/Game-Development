@@ -1,0 +1,12 @@
+local gui = script.Parent
+local textLabel = gui:WaitForChild("TextLabel")
+
+local player = game.Players.LocalPlayer
+
+local coins = player:WaitForChild("leaderstats"):WaitForChild("Coins")
+
+coins:GetPropertyChangedSignal("Value"):Connect(function()
+    textLabel.Text = "Coins: " .. coins.Value
+end)
+
+textLabel.Text = "Coins: " .. coins.Value

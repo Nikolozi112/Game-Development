@@ -1,0 +1,18 @@
+local part = script.Parent 
+
+local maxSize = Vector3.new(10, 10, 10)
+
+local growStep = Vector3.new(1, 1, 1)
+
+local function onTouch(otherPart)
+
+    if not part:IsDescendantOf(workspace) then return end
+
+    part.Size = part.Size + growStep
+
+    if part.Size.X > maxSize.X or part.Size.Y > maxSize.Y or part.Size.Z > maxSize.Z then
+        part:Destroy()
+    end
+end
+
+part.Touched:Connect(onTouch)

@@ -1,0 +1,19 @@
+function Colors(t)
+	local newTable = {}
+	for i, _ in ipairs(t) do
+		newTable[i] = Color3.new(1, 1, 1)
+	end
+	return newTable
+end
+local colors = {
+	Color3.new(1, 0, 0), 
+	Color3.new(0, 1, 0),
+	Color3.new(0, 0, 1)
+}
+
+local whiteColors = Colors(colors)
+
+for _, color in ipairs(whiteColors) do
+	print(color)
+	Color3.new(1, 1, 1)
+end

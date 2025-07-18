@@ -1,0 +1,22 @@
+local part = script.Parent  
+local cooldown = 3          
+local canTouch = true    
+
+part.Touched:Connect(function(hit)
+    if canTouch then
+        canTouch = false  
+        print("შეხება დაფიქსირდა: " .. hit.Name)
+
+        part.Transparency = 0.5  
+        part.CanCollide = false  
+
+        task.delay(cooldown, function()
+            canTouch = true
+            part.Transparency = 0
+            part.CanCollide = true
+            print("შეხება კვლავ ნებადართულია")
+        end)
+    else
+        print("შეხება დაბლოკილია დროებით")
+    end
+end)

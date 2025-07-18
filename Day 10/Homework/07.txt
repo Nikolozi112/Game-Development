@@ -1,0 +1,18 @@
+local lastTouchPlayerId = nil
+
+function onPartTouched(playerId)
+    if lastTouchPlayerId == playerId then
+        print("მოთამაშე " .. playerId .. " ორჯერ ზედიზედ შეეხო ნაწილს!")
+        
+        lastTouchPlayerId = nil 
+    else
+        lastTouchPlayerId = playerId
+    end
+end
+
+onPartTouched("Player1") 
+onPartTouched("Player1") 
+onPartTouched("Player2") 
+onPartTouched("Player2") 
+onPartTouched("Player1")
+onPartTouched("Player2")

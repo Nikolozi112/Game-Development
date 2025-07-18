@@ -1,0 +1,12 @@
+local touchPart = script.Parent
+
+local function onTouched(otherPart)
+    local character = otherPart.Parent
+    if character and character.Name == "Player1" then
+        print("Player1 შეეხო ობიექტს!")
+    else
+        print("შეხება მოხდა, მაგრამ არა Player1-ის მიერ.")
+    end
+end
+
+touchPart.Touched:Connect(onTouched)

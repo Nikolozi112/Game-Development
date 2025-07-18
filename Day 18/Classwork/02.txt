@@ -1,0 +1,20 @@
+local gui = script.Parent
+local textLabel = gui:WaitForChild("TextLabel")
+local textButton = gui:WaitForChild("TextButton")
+
+local phrases = {
+    "GOA is awesome!",
+    "Keep learning every day!",
+    "You are doing great!",
+    "Never give up!",
+    "Success starts with effort!",
+    "Creativity is power!",
+    "Believe in yourself!"
+}
+
+textButton.MouseButton1Click:Connect(function()
+
+    local randomIndex = math.random(1, #phrases)
+
+    textLabel.Text = phrases[randomIndex]
+end)

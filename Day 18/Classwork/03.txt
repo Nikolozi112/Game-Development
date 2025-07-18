@@ -1,0 +1,14 @@
+local gui = script.Parent
+local textLabel = gui:WaitForChild("TextLabel")
+local yesButton = gui:WaitForChild("YesButton")
+local noButton = gui:WaitForChild("NoButton")
+
+yesButton.MouseButton1Click:Connect(function()
+    textLabel.Text = "Correct Answer!"
+    textLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+end)
+
+noButton.MouseButton1Click:Connect(function()
+    textLabel.Text = "Incorrect! Try again."
+    textLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+end)

@@ -1,0 +1,27 @@
+local part = Instance.new("Part")
+part.Size = Vector3.new(5, 1, 5)
+part.Position = Vector3.new(0, 3, 0)
+part.Anchored = true
+part.BrickColor = BrickColor.new("Bright blue")
+part.Name = "TouchPart"
+part.Parent = workspace
+
+local scriptObj = Instance.new("Script")
+scriptObj.Parent = part
+
+scriptObj.Source = [[
+local part = script.Parent
+local Players = game:GetService("Players")
+
+part.Touched:Connect(function(hit)
+    local character = hit.Parent
+    local humanoid = character:FindFirstChild("Humanoid")
+
+    if humanoid then
+        local player = Players:GetPlayerFromCharacter(character)
+        if player then
+            print("Player touched the part: " .. player.Name)
+        end
+    end
+end)
+]]

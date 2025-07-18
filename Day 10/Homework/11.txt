@@ -1,0 +1,28 @@
+local touchedPlayers = {}
+
+local function hasPlayerTouched(playerName)
+    for _, name in ipairs(touchedPlayers) do
+        if name == playerName then
+            return true
+        end
+    end
+    return false
+end
+
+local function onTouched(player)
+    local playerName = player.Name
+    if not hasPlayerTouched(playerName) then
+        table.insert(touchedPlayers, playerName)
+        print(playerName .. " added to touchedPlayers.")
+    else
+        print(playerName .. " already touched.")
+    end
+end
+
+local part = workspace:WaitForChild("MyPart") 
+part.Touched:Connect(function(hit)
+    local player = game.Players:GetPlayerFromCharacter(hit.Parent)
+    if player then
+        onTouched(player)
+    end
+end)

@@ -1,0 +1,11 @@
+local CollectionService = game:GetService("CollectionService")
+local targetPart = workspace:FindFirstChild("KillBrick1")
+
+if targetPart then
+    CollectionService:RemoveTag(targetPart, "killBrick")
+    print("Tag removed manually from object: " .. targetPart.Name)
+end
+
+CollectionService:GetInstanceRemovedSignal("killBrick"):Connect(function(instance)
+    print("killBrick tag has been removed from object: " .. instance.Name)
+end)

@@ -1,0 +1,16 @@
+local gui = script.Parent
+local button = gui:WaitForChild("TextButton")
+
+local defaultColor = button.BackgroundColor3
+
+button.MouseButton1Click:Connect(function()
+    print("You clicked on the button")
+end)
+
+button.MouseEnter:Connect(function()
+    button.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+end)
+
+button.MouseLeave:Connect(function()
+    button.BackgroundColor3 = defaultColor
+end)

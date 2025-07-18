@@ -1,0 +1,13 @@
+function addFiveToEach(tbl)
+	for i = 1, #tbl do
+		tbl[i] = tbl[i] + 5
+	end
+end
+
+local numbers = {1, 2, 3, 4, 5}
+addFiveToEach(numbers)
+
+for i, v in ipairs(numbers) do
+	print(v)
+end
+

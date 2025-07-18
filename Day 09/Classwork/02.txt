@@ -1,0 +1,7 @@
+function PlayerNames(Names)
+	print("Hello! Welcome to the game " .. Names)
+end
+
+PlayerNames("Nika!")
+PlayerNames("Luka!")
+PlayerNames("Gio!")

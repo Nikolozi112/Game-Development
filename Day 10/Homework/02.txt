@@ -1,0 +1,6 @@
+function onPlayerJump()
+    print("მოთამაშე ახტა!") 
+end
+registerEvent("playerJump", onPlayerJump)
+
+triggerEvent("playerJump")

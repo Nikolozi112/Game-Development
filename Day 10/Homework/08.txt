@@ -1,0 +1,33 @@
+local colors = {
+    {0, 0, 1},
+    {0, 1, 0}, 
+    {1, 0, 0}    
+}
+
+local currentColorIndex = 1
+local circle = {
+    x = 400,
+    y = 300,
+    radius = 50
+}
+
+function love.load()
+    love.graphics.setBackgroundColor(1, 1, 1) 
+end
+
+function love.draw()
+    local color = colors[currentColorIndex]
+    love.graphics.setColor(color)
+    love.graphics.circle("fill", circle.x, circle.y, circle.radius)
+end
+
+function love.mousepressed(x, y, button, istouch, presses)
+    if button == 1 then 
+        local dx = x - circle.x
+        local dy = y - circle.y
+        if dx * dx + dy * dy <= circle.radius * circle.radius then
+           
+            currentColorIndex = currentColorIndex % #colors + 1
+        end
+    end
+end

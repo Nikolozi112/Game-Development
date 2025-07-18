@@ -1,0 +1,24 @@
+local killBrick = Instance.new("Part")
+killBrick.Size = Vector3.new(5, 1, 5)
+killBrick.Position = Vector3.new(0, 3, 0)
+killBrick.Anchored = true
+killBrick.BrickColor = BrickColor.new("Bright red")
+killBrick.Name = "KillBrick"
+killBrick.Parent = workspace
+
+local scriptObj = Instance.new("Script")
+scriptObj.Parent = killBrick
+
+scriptObj.Source = [[
+local part = script.Parent
+
+part.Touched:Connect(function(hit)
+    local character = hit.Parent
+    local humanoid = character:FindFirstChild("Humanoid")
+
+    if humanoid then
+        humanoid.Health = 0 -- მოთამაშის სიცოცხლის განულება
+        print("Player has been killed by KillBrick!")
+    end
+end)
+]]

@@ -1,0 +1,26 @@
+local function createPart(name, position, color)
+    local part = Instance.new("Part")
+    part.Name = name
+    part.Size = Vector3.new(4, 1, 4)
+    part.Position = position
+    part.Anchored = true
+    part.BrickColor = BrickColor.new(color)
+    part.Parent = workspace
+    return part
+end
+
+local growPart = createPart("GrowPart", Vector3.new(0, 5, 0), "Bright green")
+growPart.Touched:Connect(function()
+    growPart.Size = growPart.Size + Vector3.new(2, 2, 2)
+end)
+
+local disappearPart = createPart("DisappearPart", Vector3.new(10, 5, 0), "Bright red")
+disappearPart.Touched:Connect(function()
+    disappearPart.Transparency = 1
+    disappearPart.CanCollide = false
+end)
+
+local movePart = createPart("MovePart", Vector3.new(20, 5, 0), "Bright blue")
+movePart.Touched:Connect(function()
+    movePart.Position = movePart.Position + Vector3.new(0, 10, 0)
+end)

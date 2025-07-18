@@ -1,0 +1,7 @@
+print("დავალება 1")
+
+task.delay(2, function()
+    print("დავალება 2")
+end)
+
+print("დავალება 3")

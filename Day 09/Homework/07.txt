@@ -1,0 +1,5 @@
+function kvadrati(x)
+	return x * x
+end
+
+print(kvadrati(5))  

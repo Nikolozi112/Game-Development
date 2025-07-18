@@ -1,0 +1,19 @@
+local CollectionService = game:GetService("CollectionService")
+local Players = game:GetService("Players")
+
+local killBricks = CollectionService:GetTagged("killBrick")
+
+for _, brick in ipairs(killBricks) do
+    brick.Touched:Connect(function(hit)
+        local character = hit.Parent
+        local humanoid = character:FindFirstChild("Humanoid")
+
+        if humanoid then
+            local player = Players:GetPlayerFromCharacter(character)
+            if player then
+                humanoid.Health = 0
+                print(player.Name .. " was killed by a killBrick!")
+            end
+        end
+    end)
+end

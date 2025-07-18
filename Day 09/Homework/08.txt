@@ -1,0 +1,5 @@
+function randomNumber()
+	print(math.random(1, 100))
+end
+
+randomNumber()

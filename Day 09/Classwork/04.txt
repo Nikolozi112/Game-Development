@@ -1,0 +1,11 @@
+function DayNightCycle()
+	while true do 
+		if game.Lighting.ClockTime == 24 then
+			game.Lighting.ClockTime = 0
+		end
+		game.Lighting.ClockTime += 0.1
+		wait(0.01)
+	end
+end
+
+DayNightCycle()

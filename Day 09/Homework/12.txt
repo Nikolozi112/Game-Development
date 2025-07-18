@@ -1,0 +1,14 @@
+function updateScores(players)
+	local updatedPlayers = {}
+	for name, score in pairs(players) do
+		updatedPlayers[name] = score + 1
+	end
+	return updatedPlayers
+end
+
+local playerScores = { Alex = 5, Bella = 8 }
+local newScores = updateScores(playerScores)
+
+for name, score in pairs(newScores) do
+	print(name .. ": " .. score)
+end

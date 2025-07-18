@@ -1,0 +1,11 @@
+local waitedPart = workspace:WaitForChild("SpecialPart")
+print("WaitForChild: SpecialPart successfully found!")
+
+local foundPart = workspace:FindFirstChild("Baseplate")
+
+if foundPart then
+    print("FindFirstChild: Found existing object named 'Baseplate'")
+else
+    print("FindFirstChild: Object not found")
+end
+
