@@ -1,0 +1,3 @@
+local part = script.Parent
+
+game.Debris:AddItem(part, 5)

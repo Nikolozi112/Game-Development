@@ -1,0 +1,9 @@
+local button = script.Parent
+
+button.MouseEnter:Connect(function()
+    button.Text = "Nice!"
+end)
+
+button.MouseLeave:Connect(function()
+    button.Text = "Hover me"
+end)

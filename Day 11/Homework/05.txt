@@ -1,0 +1,8 @@
+local part = script.Parent
+
+local clickDetector = Instance.new("ClickDetector")
+clickDetector.Parent = part
+
+clickDetector.MouseClick:Connect(function(player)
+    part.BrickColor = BrickColor.new("Bright red")
+end)

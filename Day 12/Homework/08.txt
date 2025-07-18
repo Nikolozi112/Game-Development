@@ -1,0 +1,25 @@
+local part = script.Parent
+
+part.Touched:Connect(function(hit)
+    local character = hit.Parent
+    local player = game.Players:GetPlayerFromCharacter(character)
+
+    if player then
+        local stats = player:FindFirstChild("leaderstats")
+        if stats then
+            local points = stats:FindFirstChild("Points")
+            local level = stats:FindFirstChild("Level")
+
+            if points and level then
+                points.Value += 10
+                level.Value += 1
+
+                print(player.Name .. " შეეხო ბლოკს — Points: +" .. 10 .. ", Level: +" .. 1)
+            else
+                print("სტატისტიკები არ მოიძებნა მოთამაშეზე.")
+            end
+        else
+            print("Leaderstats არ მოიძებნა მოთამაშეზე.")
+        end
+    end
+end)

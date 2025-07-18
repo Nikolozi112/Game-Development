@@ -1,0 +1,6 @@
+for _, obj in pairs(workspace:GetChildren()) do
+    if obj:IsA("Part") and obj.Name == "Temp" then
+        obj:Destroy()
+        print("ნაწილი \"" .. obj.Name .. "\" წარმატებით წაიშალა")
+    end
+end

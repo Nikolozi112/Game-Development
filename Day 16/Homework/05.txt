@@ -1,0 +1,19 @@
+local CollectionService = game:GetService("CollectionService")
+local flickerParts = CollectionService:GetTagged("flickerZone")
+
+for _, part in pairs(flickerParts) do
+    task.spawn(function()
+        local isRed = true
+
+        while true do
+            if isRed then
+                part.Color = Color3.new(1, 0, 0) 
+            else
+                part.Color = Color3.new(1, 1, 1) 
+            end
+
+            isRed = not isRed 
+            task.wait(1) 
+        end
+    end)
+end

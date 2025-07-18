@@ -1,0 +1,18 @@
+local part = script.Parent
+
+part.Touched:Connect(function(hit)
+    local character = hit.Parent
+    local player = game.Players:GetPlayerFromCharacter(character)
+
+    if player then
+        local humanoid = character:FindFirstChild("Humanoid")
+        if humanoid then
+            humanoid.Health -= 20
+            print(player.Name .. " შეეხო ბლოკს — ჯანმრთელობა შემცირდა 20-ით (ახლა: " .. humanoid.Health .. ")")
+        else
+            print("Humanoid ვერ მოიძებნა პერსონაჟში")
+        end
+    else
+        print("შეხება მოთამაშისგან არ იყო")
+    end
+end)

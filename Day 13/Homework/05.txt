@@ -1,0 +1,14 @@
+local model = workspace:FindFirstChild("ToHide")
+
+if model then
+    for _, obj in pairs(model:GetChildren()) do
+
+        if obj:IsA("Part") then
+            obj.Transparency = 1      
+            obj.CanCollide = false  
+            print("დაიმალა ნაწილი: " .. obj.Name)
+        end
+    end
+else
+    print("მოდელი 'ToHide' ვერ მოიძებნა workspace-ში")
+end

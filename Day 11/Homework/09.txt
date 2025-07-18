@@ -1,0 +1,9 @@
+local parent = workspace
+
+local target = parent:FindFirstChild("TargetPart")
+
+if target then
+    print("ნაპოვნია:", target.Name)
+else
+    print("ვერ მოიძებნა")
+end

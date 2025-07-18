@@ -1,0 +1,23 @@
+local Debris = game:GetService("Debris")
+local Players = game:GetService("Players")
+
+local function setupKillBrick(part)
+    part.Touched:Connect(function(hit)
+        local character = hit.Parent
+        local humanoid = character:FindFirstChild("Humanoid")
+        local player = Players:GetPlayerFromCharacter(character)
+
+        if humanoid and player then
+            humanoid.Health = 0
+            print(player.Name .. " მოკვდა KillBrick-ით!")
+
+            Debris:AddItem(part, 0.5)
+        end
+    end)
+end
+
+for _, obj in pairs(workspace:GetChildren()) do
+    if obj.Name:match("KillBrick") and obj:IsA("Part") then
+        setupKillBrick(obj)
+    end
+end

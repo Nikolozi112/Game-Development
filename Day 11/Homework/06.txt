@@ -1,0 +1,10 @@
+local door = script.Parent
+
+local clickDetector = Instance.new("ClickDetector")
+clickDetector.Parent = door
+
+local raiseAmount = 10
+
+clickDetector.MouseClick:Connect(function(player)
+    door.Position = door.Position + Vector3.new(0, raiseAmount, 0)
+end)

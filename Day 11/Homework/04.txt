@@ -1,0 +1,18 @@
+local Players = game:GetService("Players")
+
+local killBrick = workspace:WaitForChild("KillBrick")
+
+killBrick.Touched:Connect(function(hit)
+    local character = hit.Parent
+    local humanoid = character:FindFirstChild("Humanoid")
+
+    if humanoid then
+        local player = Players:GetPlayerFromCharacter(character)
+        if player and player.Name == "Player1" then
+            humanoid.Health = 0
+            print(player.Name .. " was eliminated by KillBrick.")
+        else
+            print("Not Player1 — no elimination.")
+        end
+    end
+end)

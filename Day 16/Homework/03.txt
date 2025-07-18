@@ -1,0 +1,19 @@
+local CollectionService = game:GetService("CollectionService")
+local taggedParts = CollectionService:GetTagged("delayHeal")
+
+for _, part in pairs(taggedParts) do
+    part.Touched:Connect(function(hit)
+        local character = hit.Parent
+        local player = game.Players:GetPlayerFromCharacter(character)
+        local humanoid = character:FindFirstChild("Humanoid")
+
+        if player and humanoid then
+            print(player.Name .. " შეეხო delayHeal ნაწილს")
+
+            task.delay(2, function()
+                humanoid.Health += 20
+                print("სიცოცხლე +20 დაემატა: " .. player.Name .. " (Health: " .. humanoid.Health .. ")")
+            end)
+        end
+    end)
+end

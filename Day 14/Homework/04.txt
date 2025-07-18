@@ -1,0 +1,10 @@
+local part = script.Parent
+
+part.Touched:Connect(function(hit)
+    local character = hit.Parent
+    local player = game.Players:GetPlayerFromCharacter(character)
+
+    if player then
+        print("Player is safe: " .. player.Name)
+    end
+end)

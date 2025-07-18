@@ -1,0 +1,27 @@
+local button = script.Parent
+
+local isClicked = false
+
+button.MouseEnter:Connect(function()
+    button.Text = "მზადაა!" 
+end)
+
+button.MouseLeave:Connect(function()
+    if isClicked then
+        button.Text = "დააჭირე ხელმეორედ"
+    else
+        button.Text = "დააჭირე"
+    end
+end)
+
+button.MouseButton1Click:Connect(function()
+    isClicked = not isClicked
+
+    if isClicked then
+        button.Text = "დააჭირე ხელმეორედ"
+    else
+        button.Text = "დააჭირე"
+    end
+
+    print("ღილაკი დააჭირეს — toggle მდგომარეობა:", isClicked)
+end)

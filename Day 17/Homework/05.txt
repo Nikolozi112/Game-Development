@@ -1,0 +1,17 @@
+local UserInputService = game:GetService("UserInputService")
+local textLabel = script.Parent:WaitForChild("TextLabel")
+
+textLabel.Visible = false
+
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if input.KeyCode == Enum.KeyCode.F and not gameProcessed then
+        textLabel.Text = "Pressed F"
+        textLabel.Visible = true
+    end
+end)
+
+UserInputService.InputEnded:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.F then
+        textLabel.Visible = false
+    end
+end)

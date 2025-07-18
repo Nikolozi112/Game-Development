@@ -1,0 +1,12 @@
+local part = script.Parent
+
+part.Touched:Connect(function(hit)
+    local character = hit.Parent
+    local player = game.Players:GetPlayerFromCharacter(character)
+
+    if player then
+        print(player.Name .. " შეეხო ბლოკს — რეაგირება დაიწყო!")
+    else
+        print("შეხება მოთამაშისგან არ იყო — არაფერი ხდება.")
+    end
+end)

@@ -1,0 +1,11 @@
+local part = script.Parent 
+
+local clickDetector = part:FindFirstChild("ClickDetector")
+if not clickDetector then
+    clickDetector = Instance.new("ClickDetector")
+    clickDetector.Parent = part
+end
+
+clickDetector.MouseClick:Connect(function(player)
+    print("დაჭერა განხორციელდა: " .. player.Name)
+end)

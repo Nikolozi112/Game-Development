@@ -1,0 +1,21 @@
+local part = script.Parent
+
+part.Touched:Connect(function(hit)
+    local character = hit.Parent
+    local player = game.Players:GetPlayerFromCharacter(character)
+
+    if player then
+        local stats = player:FindFirstChild("leaderstats")
+        if stats then
+            local score = stats:FindFirstChild("Score")
+            if score then
+                score.Value -= 3
+                print(player.Name .. " შეეხო ნაწილს — Score -3 (ახლა: " .. score.Value .. ")")
+            else
+                print("Score სტატისტიკა ვერ მოიძებნა მოთამაშეზე")
+            end
+        else
+            print("leaderstats ვერ მოიძებნა მოთამაშეზე")
+        end
+    end
+end)

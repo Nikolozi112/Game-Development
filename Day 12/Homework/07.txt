@@ -1,0 +1,12 @@
+game.Players.PlayerAdded:Connect(function(player)
+    local leaderstats = Instance.new("Folder")
+    leaderstats.Name = "leaderstats"
+    leaderstats.Parent = player
+
+    local level = Instance.new("IntValue")
+    level.Name = "Level"
+    level.Value = 1
+    level.Parent = leaderstats
+
+    print(player.Name .. " დაიწყო Level 1-ით.")
+end)

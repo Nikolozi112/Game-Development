@@ -1,0 +1,19 @@
+local CollectionService = game:GetService("CollectionService")
+local boostParts = CollectionService:GetTagged("boostZone")
+
+for _, part in pairs(boostParts) do
+    part.Touched:Connect(function(hit)
+        local character = hit.Parent
+        local player = game.Players:GetPlayerFromCharacter(character)
+        local humanoid = character:FindFirstChild("Humanoid")
+
+        if player and humanoid then
+            print(player.Name .. " შეეხო boostZone ნაწილს!")
+
+            task.delay(3, function()
+                humanoid.WalkSpeed += 10
+                print(player.Name .. " მიღო სიჩქარის ბუსტი! (WalkSpeed: " .. humanoid.WalkSpeed .. ")")
+            end)
+        end
+    end)
+end

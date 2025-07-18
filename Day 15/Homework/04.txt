@@ -1,0 +1,18 @@
+local CollectionService = game:GetService("CollectionService")
+
+game.Players.PlayerAdded:Connect(function(player)
+    player.CharacterAdded:Connect(function(character)
+        local spawnPoints = CollectionService:GetTagged("spawnPoint")
+
+        if #spawnPoints > 0 then
+            local randomIndex = math.random(1, #spawnPoints)
+            local chosenSpawn = spawnPoints[randomIndex]
+
+            character:WaitForChild("HumanoidRootPart").CFrame = chosenSpawn.CFrame + Vector3.new(0, 3, 0)
+
+            print(player.Name .. " დაყენდა spawnPoint-ზე: " .. chosenSpawn.Name)
+        else
+            warn("spawnPoint თეგიანი ნაწილაკი ვერ მოიძებნა!")
+        end
+    end)
+end)

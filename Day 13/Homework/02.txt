@@ -1,0 +1,11 @@
+local model = workspace:FindFirstChild("MyModel")
+
+if model then
+    local children = model:GetChildren()
+
+    for _, obj in pairs(children) do
+        print("შვილობილი ობიექტი:", obj.Name)
+    end
+else
+    print("მოდელი 'MyModel' ვერ მოიძებნა workspace-ში")
+end

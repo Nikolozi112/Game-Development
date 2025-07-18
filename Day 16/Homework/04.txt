@@ -1,0 +1,21 @@
+local CollectionService = game:GetService("CollectionService")
+local taggedParts = CollectionService:GetTagged("delayedTag")
+
+for _, part in pairs(taggedParts) do
+    part.Touched:Connect(function(hit)
+        local character = hit.Parent
+        local player = game.Players:GetPlayerFromCharacter(character)
+
+        if player then
+            print(player.Name .. " შეეხო ნაწილს: " .. part.Name)
+
+            CollectionService:RemoveTag(part, "delayedTag")
+            print("წაშლილია tag: delayedTag — " .. part.Name)
+
+            task.delay(5, function()
+                CollectionService:AddTag(part, "delayedTag")
+                print("დამატებულია tag: delayedTag — " .. part.Name)
+            end)
+        end
+    end)
+end

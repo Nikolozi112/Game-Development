@@ -1,0 +1,37 @@
+local CollectionService = game:GetService("CollectionService")
+
+local healParts = CollectionService:GetTagged("healZone")
+
+for _, part in pairs(healParts) do
+    part.Touched:Connect(function(hit)
+        local character = hit.Parent
+        local player = game.Players:GetPlayerFromCharacter(character)
+        local humanoid = character:FindFirstChild("Humanoid")
+
+        if player and humanoid then
+            local alreadyHealing = false
+
+            if not part:GetAttribute("healing_" .. player.UserId) then
+                part:SetAttribute("healing_" .. player.UserId, true)
+
+                task.spawn(function()
+                    while part:GetAttribute("healing_" .. player.UserId) do
+                        humanoid.Health += 5
+                        print("Healing " .. player.Name .. " — Health: " .. humanoid.Health)
+                        task.wait(1)
+                    end
+                end)
+            end
+        end
+    end)
+
+    part.TouchEnded:Connect(function(hit)
+        local character = hit.Parent
+        local player = game.Players:GetPlayerFromCharacter(character)
+
+        if player then
+            part:SetAttribute("healing_" .. player.UserId, false)
+            print(player.Name .. " აღარ არის healZone-ში")
+        end
+    end)
+end

@@ -1,0 +1,25 @@
+local Players = game:GetService("Players")
+local killBrick = workspace:WaitForChild("KillBrick")
+
+local touchCounts = {}
+
+killBrick.Touched:Connect(function(hit)
+    local character = hit.Parent
+    local humanoid = character:FindFirstChild("Humanoid")
+
+    if humanoid then
+        local player = Players:GetPlayerFromCharacter(character)
+        if player then
+            local playerName = player.Name
+
+            if not touchCounts[playerName] then
+                touchCounts[playerName] = 1
+                print(playerName .. " პირველად შეეხო KillBrick-ს.")
+            elseif touchCounts[playerName] == 1 then
+                humanoid.Health = 0
+                print(playerName .. " მეორედ შეეხო — მოკლულია KillBrick-ით.")
+                touchCounts[playerName] = nil
+            end
+        end
+    end
+end)

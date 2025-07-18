@@ -1,0 +1,9 @@
+local UserInputService = game:GetService("UserInputService")
+
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        print("Left Click")
+    elseif input.UserInputType == Enum.UserInputType.MouseButton2 then
+        print("Right Click")
+    end
+end)

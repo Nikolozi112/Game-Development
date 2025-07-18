@@ -1,0 +1,17 @@
+local part = script.Parent
+
+part.Touched:Connect(function(hit)
+    local character = hit.Parent
+    local player = game.Players:GetPlayerFromCharacter(character)
+
+    if player then
+        local leaderstats = player:FindFirstChild("leaderstats")
+        if leaderstats then
+            local points = leaderstats:FindFirstChild("Points")
+            if points then
+                points.Value += 5
+                print(player.Name .. " შეეხო ნაწილს — Points გაიზარდა +5 (ახლა: " .. points.Value .. ")")
+            end
+        end
+    end
+end)

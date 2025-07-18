@@ -1,0 +1,18 @@
+local gui = script.Parent
+local button = gui:WaitForChild("ToggleButton")
+local frame = gui:WaitForChild("Frame")
+
+local isOpen = false
+frame.Visible = false
+
+button.MouseButton1Click:Connect(function()
+    isOpen = not isOpen 
+
+    frame.Visible = isOpen
+
+    if isOpen then
+        print("Frame ღიაა")
+    else
+        print("Frame დაიხურა")
+    end
+end)

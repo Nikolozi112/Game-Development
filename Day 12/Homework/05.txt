@@ -1,0 +1,24 @@
+game.Players.PlayerAdded:Connect(function(player)
+    local leaderstats = player:FindFirstChild("leaderstats")
+    if not leaderstats then
+        leaderstats = Instance.new("Folder")
+        leaderstats.Name = "leaderstats"
+        leaderstats.Parent = player
+    end
+
+    local points = leaderstats:FindFirstChild("Points")
+    if not points then
+        points = Instance.new("IntValue")
+        points.Name = "Points"
+        points.Value = 0
+        points.Parent = leaderstats
+    end
+
+    task.spawn(function()
+        while player.Parent do
+            points.Value += 1
+            print(player.Name .. " მიიღო 1 ქულა — ახლა აქვს " .. points.Value)
+            task.wait(10)
+        end
+    end)
+end)

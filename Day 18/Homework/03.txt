@@ -1,0 +1,19 @@
+local gui = script.Parent
+local label = gui:WaitForChild("TextLabel")
+local button = gui:WaitForChild("TextButton")
+
+button.MouseButton1Click:Connect(function()
+    print("მოთამაშემ დააჭირა ღილაკს — ვიწყებთ დაგვიანებულ მაგიას...")
+
+    task.delay(5, function()
+        label.Text = "შესანიშნავი მოთამაშე ხარ!"
+
+        label.TextColor3 = Color3.fromRGB(0, 200, 0)
+
+        label.Size = UDim2.new(0.5, 0, 0.2, 0)
+
+        label.Position = UDim2.new(0.25, 0, 0.3, 0)
+
+        print("TextLabel განახლდა 5 წამის შემდეგ")
+    end)
+end)

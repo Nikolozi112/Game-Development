@@ -1,0 +1,27 @@
+local CollectionService = game:GetService("CollectionService")
+local dangerParts = CollectionService:GetTagged("dangerZone")
+
+for _, part in pairs(dangerParts) do
+    task.spawn(function()
+        local transparencyUp = true
+
+        while true do
+
+            if transparencyUp then
+                part.Transparency += 0.05
+                if part.Transparency >= 0.6 then
+                    transparencyUp = false
+                end
+            else
+                part.Transparency -= 0.05
+                if part.Transparency <= 0 then
+                    transparencyUp = true
+                end
+            end
+
+            local t = math.abs(math.sin(tick())) 
+            part.Color = Color3.new(1, t, 0)
+            task.wait(0.1)
+        end
+    end)
+end

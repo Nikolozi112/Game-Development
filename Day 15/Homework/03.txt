@@ -1,0 +1,5 @@
+local CollectionService = game:GetService("CollectionService")
+
+CollectionService:GetInstanceRemovedSignal("killBrick"):Connect(function(instance)
+    print("killBrick tag has been removed from object: " .. instance:GetFullName())
+end)

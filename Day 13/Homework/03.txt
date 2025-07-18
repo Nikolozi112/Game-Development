@@ -1,0 +1,14 @@
+local model = workspace:FindFirstChild("MyModel")
+
+if model then
+    local children = model:GetChildren()
+
+    for _, obj in pairs(children) do
+        if obj:IsA("Part") then
+            obj.Color = Color3.new(1, 1, 1)
+            print("შეცვლილია ფერი:", obj.Name)
+        end
+    end
+else
+    print("MyModel ვერ მოიძებნა workspace-ში")
+end

@@ -1,0 +1,32 @@
+local gui = script.Parent
+local button = gui:WaitForChild("Magic Button") 
+local label = gui:WaitForChild("TextLabel") 
+
+button.MouseEnter:Connect(function()
+    label.TextColor3 = Color3.fromRGB(255, 0, 0)
+end)
+
+button.MouseLeave:Connect(function()
+    label.TextColor3 = Color3.fromRGB(255, 255, 255)
+end)
+
+button.MouseButton1Click:Connect(function()
+    print("დაჭერილია ღილაკი — ვიწყებთ ზომის ზრდას!")
+
+    local currentSize = label.Size
+
+    for i = 1, 3 do
+        task.wait(1)
+
+        currentSize = UDim2.new(
+            currentSize.X.Scale * 1.2,
+            currentSize.X.Offset,
+            currentSize.Y.Scale * 1.2,
+            currentSize.Y.Offset
+        )
+
+        label.Size = currentSize 
+    end
+
+    print("TextLabel გაიზარდა 3-ჯერ ეტაპობრივად!")
+end)

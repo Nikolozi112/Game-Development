@@ -1,0 +1,11 @@
+local model = workspace:FindFirstChild("MyModel")
+
+if model then
+    local children = model:GetChildren()
+
+    local count = #children
+
+    print("MyModel-ში არის შვილობილი ობიექტები რაოდენობით: " .. count)
+else
+    print("მოდელი 'MyModel' ვერ მოიძებნა workspace-ში")
+end

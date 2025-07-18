@@ -1,0 +1,12 @@
+local gui = script.Parent
+local label = gui:WaitForChild("TextLabel")
+local button = gui:WaitForChild("ChangeColorButton")
+
+button.MouseButton1Click:Connect(function()
+    local randomBrick = BrickColor.Random()
+    local color3 = randomBrick.Color
+
+    label.TextColor3 = color3
+
+    print("TextLabel-ის ფერი შეიცვალა: " .. tostring(randomBrick))
+end)

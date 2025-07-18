@@ -1,0 +1,15 @@
+local CollectionService = game:GetService("CollectionService")
+
+local killBrickPart = workspace:FindFirstChild("KillBrick")
+
+if killBrickPart then
+    CollectionService:RemoveTag(killBrickPart, "killBrick")
+    print("killBrick tag temporarily removed from " .. killBrickPart.Name)
+
+    task.wait(5)
+
+    CollectionService:AddTag(killBrickPart, "killBrick")
+    print("killBrick tag re-added to " .. killBrickPart.Name)
+else
+    warn("Part სახელით 'KillBrick' ვერ მოიძებნა workspace-ში")
+end

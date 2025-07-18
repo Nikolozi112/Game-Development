@@ -1,0 +1,5 @@
+local part = script.Parent
+
+task.wait(10)
+
+part:Destroy()

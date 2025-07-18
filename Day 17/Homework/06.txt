@@ -1,0 +1,14 @@
+local screenGui = script.Parent
+local hideButton = screenGui:WaitForChild("Hide")
+local showButton = screenGui:WaitForChild("Show")
+local textLabel = screenGui:WaitForChild("TextLabel")
+
+hideButton.MouseButton1Click:Connect(function()
+    textLabel.Visible = false
+    print("TextLabel დამალულია")
+end)
+
+showButton.MouseButton1Click:Connect(function()
+    textLabel.Visible = true
+    print("TextLabel გამოჩნდა")
+end)
