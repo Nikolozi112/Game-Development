@@ -1,0 +1,28 @@
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local textBox = Instance.new("TextBox")
+textBox.Size = UDim2.new(0, 200, 0, 40)
+textBox.Position = UDim2.new(0, 20, 1, -60) 
+textBox.PlaceholderText = "შეიყვანე ტექსტი..."
+textBox.TextScaled = true
+textBox.Parent = screenGui
+
+textBox.FocusLost:Connect(function()
+    local userInput = textBox.Text
+
+    textBox.Text = ""
+
+    local responseLabel = Instance.new("TextLabel")
+    responseLabel.Size = UDim2.new(0, 300, 0, 50)
+    responseLabel.Position = UDim2.new(0.5, -150, 0.5, -25) 
+    responseLabel.Text = "შეიყვანე: " .. userInput
+    responseLabel.TextScaled = true
+    responseLabel.BackgroundTransparency = 1
+    responseLabel.TextColor3 = Color3.new(1, 1, 1)
+    responseLabel.Parent = screenGui
+
+    task.delay(5, function()
+        responseLabel:Destroy()
+    end)
+end)

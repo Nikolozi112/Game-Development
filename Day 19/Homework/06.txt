@@ -1,0 +1,35 @@
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local textBox = Instance.new("TextBox")
+textBox.Size = UDim2.new(0, 200, 0, 40)
+textBox.Position = UDim2.new(0.5, -100, 0.5, -20)
+textBox.PlaceholderText = "შეიყვანე ტექსტი"
+textBox.TextScaled = true
+textBox.Parent = screenGui
+
+local confirmButton = Instance.new("TextButton")
+confirmButton.Size = UDim2.new(0, 200, 0, 40)
+confirmButton.Position = UDim2.new(0.5, -100, 0.5, 40)
+confirmButton.Text = "გამოაჩინე ტექსტი"
+confirmButton.Parent = screenGui
+
+confirmButton.MouseButton1Click:Connect(function()
+    local displayLabel = Instance.new("TextLabel")
+    displayLabel.Size = UDim2.new(0, 300, 0, 50)
+    displayLabel.Position = UDim2.new(0.5, -150, 0, 20)
+    displayLabel.Text = textBox.Text
+    displayLabel.TextScaled = true
+
+    local randColor = Color3.new(math.random(), math.random(), math.random())
+    displayLabel.TextColor3 = randColor
+
+    local randomHeight = math.random(40, 100)
+    displayLabel.Size = UDim2.new(0, 300, 0, randomHeight)
+
+    displayLabel.Parent = screenGui
+
+    task.delay(4, function()
+        displayLabel:Destroy()
+    end)
+end)

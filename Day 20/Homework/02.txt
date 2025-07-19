@@ -1,0 +1,24 @@
+-- LocalScript TextButton-ში
+
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local remoteEvent = replicatedStorage:WaitForChild("HelloEvent")
+
+local button = script.Parent
+
+button.MouseButton1Click:Connect(function()
+    remoteEvent:FireServer() 
+end)
+
+
+
+
+
+-- Script ServerScriptService-ში
+
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local remoteEvent = replicatedStorage:WaitForChild("HelloEvent")
+
+
+remoteEvent.OnServerEvent:Connect(function(player)
+    print("Hello from " .. player.Name)
+end)

@@ -1,0 +1,29 @@
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local textBox = Instance.new("TextBox")
+textBox.Size = UDim2.new(0, 200, 0, 40)
+textBox.Position = UDim2.new(0.5, -100, 0.4, -20)
+textBox.PlaceholderText = "შეიყვანე სახელი"
+textBox.Parent = screenGui
+
+local confirmButton = Instance.new("TextButton")
+confirmButton.Size = UDim2.new(0, 200, 0, 40)
+confirmButton.Position = UDim2.new(0.5, -100, 0.5, -20)
+confirmButton.Text = "დადასტურება"
+confirmButton.Parent = screenGui
+
+local textLabel = Instance.new("TextLabel")
+textLabel.Size = UDim2.new(0, 300, 0, 40)
+textLabel.Position = UDim2.new(0.5, -150, 0.6, -20)
+textLabel.Text = ""
+textLabel.TextScaled = true
+textLabel.Parent = screenGui
+
+confirmButton.MouseButton1Click:Connect(function()
+    if textBox.Text == "" then
+        textLabel.Text = "გთხოვთ შეიყვანოთ სახელი!"
+    else
+        textLabel.Text = "მოგესალმებით, " .. textBox.Text .. "!"
+    end
+end)

@@ -1,0 +1,41 @@
+-- Script ServerScriptService-ში
+
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local giveCoinsEvent = replicatedStorage:WaitForChild("GiveCoinsEvent")
+
+game.Players.PlayerAdded:Connect(function(player)
+    local statsFolder = Instance.new("Folder")
+    statsFolder.Name = "leaderstats"
+    statsFolder.Parent = player
+
+    local coins = Instance.new("IntValue")
+    coins.Name = "Coins"
+    coins.Value = 0
+    coins.Parent = statsFolder
+end)
+
+giveCoinsEvent.OnServerEvent:Connect(function(player)
+    local stats = player:FindFirstChild("leaderstats")
+    local coins = stats and stats:FindFirstChild("Coins")
+
+    if coins then
+        coins.Value += 10
+    end
+end)
+
+
+
+
+
+
+
+-- LocalScript TextButton-ში
+
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local giveCoinsEvent = replicatedStorage:WaitForChild("GiveCoinsEvent")
+
+local button = script.Parent
+
+button.MouseButton1Click:Connect(function()
+    giveCoinsEvent:FireServer()
+end)

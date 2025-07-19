@@ -1,0 +1,30 @@
+-- Script ServerScriptService-ში
+
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local welcomeEvent = replicatedStorage:WaitForChild("WelcomeEvent")
+
+game.Players.PlayerAdded:Connect(function(player)
+    local message = "მოგესალმებით თამაშში, " .. player.Name .. "!"
+    
+ 
+    welcomeEvent:FireClient(player, message)
+end)
+
+
+
+
+
+
+-- LocalScript StarterPlayerScripts-ში
+
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local welcomeEvent = replicatedStorage:WaitForChild("WelcomeEvent")
+
+welcomeEvent.OnClientEvent:Connect(function(message)
+    game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {
+        Text = message,
+        Color = Color3.fromRGB(255, 255, 0), 
+        Font = Enum.Font.SourceSansBold,
+        FontSize = Enum.FontSize.Size24
+    })
+end)

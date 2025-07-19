@@ -1,0 +1,27 @@
+-- LocalScript TextButton-ში
+
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local colorEvent = replicatedStorage:WaitForChild("ColorChangeEvent")
+
+local button = script.Parent
+
+button.MouseButton1Click:Connect(function()
+    colorEvent:FireServer() 
+end)
+
+
+
+
+
+
+-- Script ServerScriptService-ში
+
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local colorEvent = replicatedStorage:WaitForChild("ColorChangeEvent")
+
+local part = game.Workspace:WaitForChild("TargetPart")
+
+colorEvent.OnServerEvent:Connect(function(player)
+    part.BrickColor = BrickColor.Random()
+    print("Color changed by " .. player.Name)
+end)

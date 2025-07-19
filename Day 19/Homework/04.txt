@@ -1,0 +1,40 @@
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local passwordBox = Instance.new("TextBox")
+passwordBox.Size = UDim2.new(0, 200, 0, 40)
+passwordBox.Position = UDim2.new(0.5, -100, 0.4, -20)
+passwordBox.PlaceholderText = "შეიყვანე პაროლი"
+passwordBox.Parent = screenGui
+
+local messageLabel = Instance.new("TextLabel")
+messageLabel.Size = UDim2.new(0, 250, 0, 40)
+messageLabel.Position = UDim2.new(0.5, -125, 0.5, 50)
+messageLabel.Text = ""
+messageLabel.TextScaled = true
+messageLabel.Parent = screenGui
+
+local realPassword = ""
+
+passwordBox.Changed:Connect(function(property)
+    if property == "Text" then
+        local inputLength = #passwordBox.Text
+
+        local prevLength = #realPassword
+        if inputLength > prevLength then
+            local newChar = passwordBox.Text:sub(prevLength + 1, inputLength)
+            realPassword = realPassword .. newChar
+        elseif inputLength < prevLength then
+            realPassword = realPassword:sub(1, inputLength)
+        end
+
+        passwordBox.Text = string.rep("★", inputLength)
+    end
+end)
+
+passwordBox.FocusLost:Connect(function()
+    messageLabel.Text = "პაროლი მიღებულია!"
+
+    -- (სურვილისამებრ: შეგიძლია დაბეჭდო პაროლი Output-ში დასატესტად)
+    print("შეყვანილი პაროლი: " .. realPassword)
+end)

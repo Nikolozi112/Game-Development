@@ -1,0 +1,21 @@
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local textBox = Instance.new("TextBox")
+textBox.Size = UDim2.new(0.3, 0, 0.1, 0) 
+textBox.Position = UDim2.new(0.5, -150, 0.5, -25) 
+
+textBox.Text = ""
+textBox.PlaceholderText = "შეიყვანე რამე..."
+textBox.TextScaled = true
+textBox.Parent = screenGui
+
+textBox.Focused:Connect(function()
+    local rand = Random.new()
+
+    local r = rand:NextNumber(0, 1)
+    local g = rand:NextNumber(0, 1)
+    local b = rand:NextNumber(0, 1)
+
+    textBox.BackgroundColor3 = Color3.new(r, g, b)
+end)

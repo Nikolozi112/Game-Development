@@ -1,0 +1,23 @@
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local textBox = Instance.new("TextBox")
+textBox.Size = UDim2.new(0, 200, 0, 50)
+textBox.Position = UDim2.new(0.5, -100, 0.5, -60)
+textBox.PlaceholderText = "Type here..."
+textBox.Parent = screenGui
+
+local textLabel = Instance.new("TextLabel")
+textLabel.Size = UDim2.new(0, 200, 0, 50)
+textLabel.Position = UDim2.new(0.5, -100, 0.5, 10)
+textLabel.Text = "მოლოდინში..."
+textLabel.TextScaled = true
+textLabel.Parent = screenGui
+
+textBox.Focused:Connect(function()
+    textLabel.Text = "შეიყვანე ტექსტი..."
+end)
+
+textBox.FocusLost:Connect(function()
+    textLabel.Text = "შეყვანილია: " .. textBox.Text
+end)
